@@ -36,3 +36,9 @@ def delete_note(note_id: int):
         raise HTTPException(status_code=404, detail="Note not found")
     del notes[note_id]
     return None
+@app.put("/notes/{note_id}")
+def update_note(note_id: int, note: Note):
+    if note_id not in notes:
+        raise HTTPException(status_code=404, detail="Note not found")
+    notes[note_id] = note
+    return {"id": note_id, **note.model_dump()}
