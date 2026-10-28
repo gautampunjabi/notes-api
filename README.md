@@ -7,6 +7,8 @@ A simple REST API built with FastAPI.
 - `POST /notes` - create a note
 - `GET /notes` - list all notes
 - `GET /notes/{note_id}` - get one note
+- `PUT /notes/{note_id}` - update a note
+- `DELETE /notes/{note_id}` - delete a note
 
 ## Run locally
     pip install "fastapi[standard]"
